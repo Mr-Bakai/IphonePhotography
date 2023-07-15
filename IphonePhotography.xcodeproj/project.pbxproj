@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9C7985B2A49CECF0080CB73 /* IphonePhotographyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7985A2A49CECF0080CB73 /* IphonePhotographyApp.swift */; };
-		A9C7985D2A49CECF0080CB73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7985C2A49CECF0080CB73 /* ContentView.swift */; };
+		A9AD81742A62DE2D00E845F4 /* LessonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */; };
+		A9C7985B2A49CECF0080CB73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7985A2A49CECF0080CB73 /* App.swift */; };
+		A9C7985D2A49CECF0080CB73 /* LessonsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */; };
 		A9C7985F2A49CED10080CB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7985E2A49CED10080CB73 /* Assets.xcassets */; };
 		A9C798622A49CED10080CB73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C798612A49CED10080CB73 /* Preview Assets.xcassets */; };
 		A9C7986C2A49CED10080CB73 /* IphonePhotographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7986B2A49CED10080CB73 /* IphonePhotographyTests.swift */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListView.swift; sourceTree = "<group>"; };
 		A9C798572A49CECF0080CB73 /* IphonePhotography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IphonePhotography.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9C7985A2A49CECF0080CB73 /* IphonePhotographyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphonePhotographyApp.swift; sourceTree = "<group>"; };
-		A9C7985C2A49CECF0080CB73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9C7985A2A49CECF0080CB73 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsScreen.swift; sourceTree = "<group>"; };
 		A9C7985E2A49CED10080CB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C798612A49CED10080CB73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9C798672A49CED10080CB73 /* IphonePhotographyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IphonePhotographyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9AD81722A62DD6400E845F4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */,
+				A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		A9C7984E2A49CECF0080CB73 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +105,8 @@
 		A9C798592A49CECF0080CB73 /* IphonePhotography */ = {
 			isa = PBXGroup;
 			children = (
-				A9C7985A2A49CECF0080CB73 /* IphonePhotographyApp.swift */,
-				A9C7985C2A49CECF0080CB73 /* ContentView.swift */,
+				A9AD81722A62DD6400E845F4 /* Screens */,
+				A9C7985A2A49CECF0080CB73 /* App.swift */,
 				A9C7985E2A49CED10080CB73 /* Assets.xcassets */,
 				A9C798602A49CED10080CB73 /* Preview Content */,
 			);
@@ -257,8 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C7985D2A49CECF0080CB73 /* ContentView.swift in Sources */,
-				A9C7985B2A49CECF0080CB73 /* IphonePhotographyApp.swift in Sources */,
+				A9AD81742A62DE2D00E845F4 /* LessonsListView.swift in Sources */,
+				A9C7985D2A49CECF0080CB73 /* LessonsScreen.swift in Sources */,
+				A9C7985B2A49CECF0080CB73 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

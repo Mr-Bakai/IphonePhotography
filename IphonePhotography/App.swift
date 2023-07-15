@@ -11,7 +11,7 @@ import SwiftUI
 struct IphonePhotographyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LessonsScreen()
         }
     }
 }
