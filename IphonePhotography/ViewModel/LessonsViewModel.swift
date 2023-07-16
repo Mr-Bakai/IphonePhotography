@@ -35,6 +35,7 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
                     
                 case .finished:
                     self.state = .success(content: self.lessons)
+                    
                 case .failure(let error):
                     self.state = .failed(error: error)
                 }

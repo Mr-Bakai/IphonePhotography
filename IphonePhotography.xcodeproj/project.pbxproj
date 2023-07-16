@@ -14,6 +14,7 @@
 		A9AD81802A63113E00E845F4 /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD817F2A63113E00E845F4 /* LessonsService.swift */; };
 		A9AD81832A6316E300E845F4 /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81822A6316E300E845F4 /* ResultState.swift */; };
 		A9AD81862A63173100E845F4 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81852A63173100E845F4 /* LessonsViewModel.swift */; };
+		A9BF0C8A2A63F380008F584C /* ImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF0C892A63F380008F584C /* ImagePlaceholder.swift */; };
 		A9C7985B2A49CECF0080CB73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7985A2A49CECF0080CB73 /* App.swift */; };
 		A9C7985D2A49CECF0080CB73 /* LessonsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */; };
 		A9C7985F2A49CED10080CB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7985E2A49CED10080CB73 /* Assets.xcassets */; };
@@ -21,6 +22,9 @@
 		A9C7986C2A49CED10080CB73 /* IphonePhotographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7986B2A49CED10080CB73 /* IphonePhotographyTests.swift */; };
 		A9C798762A49CED10080CB73 /* IphonePhotographyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C798752A49CED10080CB73 /* IphonePhotographyUITests.swift */; };
 		A9C798782A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C798772A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift */; };
+		AFDB409C7573EA91A35D38F6 /* Pods_IphonePhotographyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2D57656AB4A2CCDA0FDCBC /* Pods_IphonePhotographyTests.framework */; };
+		C52A66C65B4E5C90034FD9CE /* Pods_IphonePhotography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6562CB4CE61E1672C7157C4 /* Pods_IphonePhotography.framework */; };
+		F6ABB436184D95B36062A49A /* Pods_IphonePhotography_IphonePhotographyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE39C04F4B4E741F236DF032 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AE5AC9AEF9F828D2051C53B /* Pods-IphonePhotographyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotographyTests.release.xcconfig"; path = "Target Support Files/Pods-IphonePhotographyTests/Pods-IphonePhotographyTests.release.xcconfig"; sourceTree = "<group>"; };
+		4745C6171094F0B6A4F2D7D0 /* Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig"; path = "Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F97CD682ECB8B9996F4ED12 /* Pods-IphonePhotography.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography.debug.xcconfig"; path = "Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography.debug.xcconfig"; sourceTree = "<group>"; };
+		815E0637B54345247EF7C541 /* Pods-IphonePhotography.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography.release.xcconfig"; path = "Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography.release.xcconfig"; sourceTree = "<group>"; };
 		A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListView.swift; sourceTree = "<group>"; };
 		A9AD81762A630E9700E845F4 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsEndpoint.swift; sourceTree = "<group>"; };
@@ -48,6 +56,7 @@
 		A9AD817F2A63113E00E845F4 /* LessonsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 		A9AD81822A6316E300E845F4 /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
 		A9AD81852A63173100E845F4 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
+		A9BF0C892A63F380008F584C /* ImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholder.swift; sourceTree = "<group>"; };
 		A9C798572A49CECF0080CB73 /* IphonePhotography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IphonePhotography.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7985A2A49CECF0080CB73 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsScreen.swift; sourceTree = "<group>"; };
@@ -58,6 +67,11 @@
 		A9C798712A49CED10080CB73 /* IphonePhotographyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IphonePhotographyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C798752A49CED10080CB73 /* IphonePhotographyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphonePhotographyUITests.swift; sourceTree = "<group>"; };
 		A9C798772A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphonePhotographyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B6562CB4CE61E1672C7157C4 /* Pods_IphonePhotography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE39C04F4B4E741F236DF032 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotography_IphonePhotographyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6D0F05DE94A15A38262BF52 /* Pods-IphonePhotography-IphonePhotographyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography-IphonePhotographyUITests.release.xcconfig"; path = "Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F87137D2D0555D90C7203EAE /* Pods-IphonePhotographyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotographyTests.debug.xcconfig"; path = "Target Support Files/Pods-IphonePhotographyTests/Pods-IphonePhotographyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2D57656AB4A2CCDA0FDCBC /* Pods_IphonePhotographyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotographyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52A66C65B4E5C90034FD9CE /* Pods_IphonePhotography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDB409C7573EA91A35D38F6 /* Pods_IphonePhotographyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,17 +95,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6ABB436184D95B36062A49A /* Pods_IphonePhotography_IphonePhotographyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D9C08635757B9D3BE6E6DBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6562CB4CE61E1672C7157C4 /* Pods_IphonePhotography.framework */,
+				BE39C04F4B4E741F236DF032 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */,
+				FA2D57656AB4A2CCDA0FDCBC /* Pods_IphonePhotographyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72EFFC8E7EAAFBF35BA5DCE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F97CD682ECB8B9996F4ED12 /* Pods-IphonePhotography.debug.xcconfig */,
+				815E0637B54345247EF7C541 /* Pods-IphonePhotography.release.xcconfig */,
+				4745C6171094F0B6A4F2D7D0 /* Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig */,
+				C6D0F05DE94A15A38262BF52 /* Pods-IphonePhotography-IphonePhotographyUITests.release.xcconfig */,
+				F87137D2D0555D90C7203EAE /* Pods-IphonePhotographyTests.debug.xcconfig */,
+				3AE5AC9AEF9F828D2051C53B /* Pods-IphonePhotographyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A9AD81722A62DD6400E845F4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */,
-				A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */,
+				A9BF0C872A63F353008F584C /* LessonScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -142,6 +181,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A9BF0C872A63F353008F584C /* LessonScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9C7985C2A49CECF0080CB73 /* LessonsScreen.swift */,
+				A9BF0C882A63F363008F584C /* Components */,
+			);
+			path = LessonScreen;
+			sourceTree = "<group>";
+		};
+		A9BF0C882A63F363008F584C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */,
+				A9BF0C892A63F380008F584C /* ImagePlaceholder.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A9C7984E2A49CECF0080CB73 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +206,8 @@
 				A9C7986A2A49CED10080CB73 /* IphonePhotographyTests */,
 				A9C798742A49CED10080CB73 /* IphonePhotographyUITests */,
 				A9C798582A49CECF0080CB73 /* Products */,
+				72EFFC8E7EAAFBF35BA5DCE1 /* Pods */,
+				2D9C08635757B9D3BE6E6DBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9C7987B2A49CED10080CB73 /* Build configuration list for PBXNativeTarget "IphonePhotography" */;
 			buildPhases = (
+				BD9807417708A5B0B59B8634 /* [CP] Check Pods Manifest.lock */,
 				A9C798532A49CECF0080CB73 /* Sources */,
 				A9C798542A49CECF0080CB73 /* Frameworks */,
 				A9C798552A49CECF0080CB73 /* Resources */,
+				81432614111CA86426F95056 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9C7987E2A49CED10080CB73 /* Build configuration list for PBXNativeTarget "IphonePhotographyTests" */;
 			buildPhases = (
+				CE6F448E4D63D8BCC9738432 /* [CP] Check Pods Manifest.lock */,
 				A9C798632A49CED10080CB73 /* Sources */,
 				A9C798642A49CED10080CB73 /* Frameworks */,
 				A9C798652A49CED10080CB73 /* Resources */,
@@ -246,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9C798812A49CED10080CB73 /* Build configuration list for PBXNativeTarget "IphonePhotographyUITests" */;
 			buildPhases = (
+				B3E54D5A8FB6DF665CF13501 /* [CP] Check Pods Manifest.lock */,
 				A9C7986D2A49CED10080CB73 /* Sources */,
 				A9C7986E2A49CED10080CB73 /* Frameworks */,
 				A9C7986F2A49CED10080CB73 /* Resources */,
+				897289C7A05313CD9545A1FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +393,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		81432614111CA86426F95056 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		897289C7A05313CD9545A1FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3E54D5A8FB6DF665CF13501 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IphonePhotography-IphonePhotographyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD9807417708A5B0B59B8634 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IphonePhotography-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE6F448E4D63D8BCC9738432 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IphonePhotographyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9C798532A49CECF0080CB73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,6 +508,7 @@
 				A9AD81832A6316E300E845F4 /* ResultState.swift in Sources */,
 				A9AD817A2A630ECA00E845F4 /* LessonsEndpoint.swift in Sources */,
 				A9C7985B2A49CECF0080CB73 /* App.swift in Sources */,
+				A9BF0C8A2A63F380008F584C /* ImagePlaceholder.swift in Sources */,
 				A9AD81862A63173100E845F4 /* LessonsViewModel.swift in Sources */,
 				A9AD817D2A63103B00E845F4 /* APIError.swift in Sources */,
 			);
@@ -495,6 +663,7 @@
 		};
 		A9C7987C2A49CED10080CB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F97CD682ECB8B9996F4ED12 /* Pods-IphonePhotography.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -509,6 +678,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,6 +694,7 @@
 		};
 		A9C7987D2A49CED10080CB73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 815E0637B54345247EF7C541 /* Pods-IphonePhotography.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,6 +709,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,6 +725,7 @@
 		};
 		A9C7987F2A49CED10080CB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F87137D2D0555D90C7203EAE /* Pods-IphonePhotographyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -573,6 +746,7 @@
 		};
 		A9C798802A49CED10080CB73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE5AC9AEF9F828D2051C53B /* Pods-IphonePhotographyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -593,6 +767,7 @@
 		};
 		A9C798822A49CED10080CB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4745C6171094F0B6A4F2D7D0 /* Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -611,6 +786,7 @@
 		};
 		A9C798832A49CED10080CB73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D0F05DE94A15A38262BF52 /* Pods-IphonePhotography-IphonePhotographyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
