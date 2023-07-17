@@ -19,7 +19,7 @@ struct LessonsListView: View {
         NavigationView {
             List {
                 ForEach(lessons, id: \.id) { item in
-                    NavigationLink(destination: LessonsListView(lessons: lessons)) {
+                    NavigationLink(destination: makeLessonDetailsVC()) {
                         HStack {
                             ImagePlaceholder(lesson: item)
                             
@@ -35,6 +35,12 @@ struct LessonsListView: View {
             }
             .navigationTitle("Lessons")
         }
+    }
+    
+    private func makeLessonDetailsVC() -> some View {
+        return LessonDetailsViewControllerView()
+            .navigationBarHidden(true)
+            .ignoresSafeArea(.all)
     }
 }
 
