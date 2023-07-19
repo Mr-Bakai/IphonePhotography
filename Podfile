@@ -7,6 +7,7 @@ target 'IphonePhotography' do
 
   # Pods for IphonePhotography
     pod  'URLImage'
+    pod 'SnapKit', '~> 5.6.0'
 
 
   target 'IphonePhotographyTests' do

@@ -1,4 +1,5 @@
 PODS:
+  - SnapKit (5.6.0)
   - URLImage (2.2.5):
     - URLImage/Common (= 2.2.5)
     - URLImage/DownloadManager (= 2.2.5)
@@ -20,15 +21,18 @@ PODS:
   - URLImage/RemoteContentView (2.2.5)
 
 DEPENDENCIES:
+  - SnapKit (~> 5.6.0)
   - URLImage
 
 SPEC REPOS:
   trunk:
+    - SnapKit
     - URLImage
 
 SPEC CHECKSUMS:
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   URLImage: 36a66c03ba2a9ccbbf06bc83431f2cef171008e8
 
-PODFILE CHECKSUM: 5e0738479173fa7c17ceb0079f86fe834380d638
+PODFILE CHECKSUM: f64248012a9299b4a34000b513a914fec589274d
 
 COCOAPODS: 1.11.3

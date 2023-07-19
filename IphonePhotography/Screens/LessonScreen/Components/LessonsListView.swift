@@ -38,9 +38,31 @@ struct LessonsListView: View {
     }
     
     private func makeLessonDetailsVC() -> some View {
-        return LessonDetailsViewControllerView()
-            .navigationBarHidden(true)
-            .ignoresSafeArea(.all)
+        LessonDetailsViewControllerView()
+            .navigationBarTitleDisplayMode(.inline)
+            .edgesIgnoringSafeArea(.bottom)
+            .toolbar { getToolbar() }
+    }
+    
+    func getToolbar() -> some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    // Start downloading
+                    let _ = print("download tapped")
+                } label: {
+                    HStack {
+                        Image("cloud_download")
+                            .resizable()
+                            .renderingMode(.template)
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.blue)
+                        
+                        Text("Download")
+                    }
+                }
+            }
+        }
     }
 }
 
