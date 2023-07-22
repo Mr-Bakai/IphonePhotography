@@ -10,11 +10,17 @@ import SwiftUI
 
 struct LessonDetailsViewControllerView: UIViewControllerRepresentable {
     
+    private var lesson: Lesson
+    
+    init(lesson: Lesson) {
+        self.lesson = lesson
+    }
+    
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
     }
     
     func makeUIViewController(context: Context) -> some UIViewController {
-        return LessonDetailsViewController()
+        return LessonDetailsViewController(lesson: self.lesson)
     }
 }

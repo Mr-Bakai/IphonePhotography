@@ -27,18 +27,15 @@ struct ImagePlaceholder: View {
                         )
                     ),
                     failure: { error, _ in
-                        EmptyView() // TODO: Show error view or error bottom sheet
+                        EmptyView()
+                        // TODO: Show error view or error bottom sheet
                     },
                     content: { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                            .scaledToFit()
                     })
-                .frame(
-                    width: 70,
-                    height: 70
-                )
-                .cornerRadius(10)
             } else {
                 // TODO: Show error view or error bottom sheet
             }

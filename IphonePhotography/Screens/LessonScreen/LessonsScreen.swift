@@ -19,8 +19,10 @@ struct LessonsScreen: View {
                 
             case .success(let lessons):
                 LessonsListView(lessons: lessons)
+                let _ = print("@@ Lessons: \(lessons)")
                 
             case .failed(_):
+                // TODO: Show Error BottomSheet
                 ProgressView()
             }
         }

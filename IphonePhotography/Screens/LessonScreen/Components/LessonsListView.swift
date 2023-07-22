@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LessonsListView: View {
     
-    var lessons: [Lesson]
+    private var lessons: [Lesson]
     
     init(lessons: [Lesson]) {
         self.lessons = lessons
@@ -19,26 +19,26 @@ struct LessonsListView: View {
         NavigationView {
             List {
                 ForEach(lessons, id: \.id) { item in
-                    NavigationLink(destination: makeLessonDetailsVC()) {
+                    NavigationLink(destination: makeLessonDetailsVC(item)) {
                         HStack {
                             ImagePlaceholder(lesson: item)
+                                .cornerRadius(6)
+                            Text(item.name ?? "")
+                                .fontWeight(.semibold)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.5)
                             
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(item.name ?? "")
-                                    .fontWeight(.semibold)
-                                    .lineLimit(2)
-                                    .minimumScaleFactor(0.5)
-                            }
                         }
                     }
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("Lessons")
         }
     }
     
-    private func makeLessonDetailsVC() -> some View {
-        LessonDetailsViewControllerView()
+    private func makeLessonDetailsVC(_ lesson: Lesson) -> some View {
+        LessonDetailsViewControllerView(lesson: lesson)
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.bottom)
             .toolbar { getToolbar() }
@@ -48,7 +48,7 @@ struct LessonsListView: View {
         Group {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // Start downloading
+                    // TODO: Start downloading
                     let _ = print("download tapped")
                 } label: {
                     HStack {

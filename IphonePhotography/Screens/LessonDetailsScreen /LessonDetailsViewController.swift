@@ -8,13 +8,29 @@
 import UIKit
 import SwiftUI
 import SnapKit
+import URLImage
 
 class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
+    private var lesson: Lesson
     
     private let toolbar: UIToolbarView = {
         let view = UIToolbarView(title: "Lessons")
         return view
     }()
+    
+    private let imageCover: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    init(lesson: Lesson) {
+        self.lesson = lesson
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,25 +38,28 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
         
-        view.addSubview(toolbar)
-//        toolbar.snp.makeConstraints { make in
-//            make.width.equalToSuperview()
-//            make.top.equalToSuperview()
-//            make.height.equalTo(44)
-//        }
-//
-//        toolbar.backImageTapped = { [weak self] in
-//            guard let self else { return }
-//            print("Back Image Tapped")
-//        }
+        let thumbnail = UIHostingController(rootView: ImagePlaceholder(lesson: lesson)).view ?? UIView()
+        
+        view.addSubview(thumbnail)
+        thumbnail.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.top.equalToSuperview()
+        }
     }
 }
 
 struct LessonDetailsViewController_Previews: PreviewProvider {
+    private static let lesson: Lesson = Lesson(
+        id: 0,
+        name: "",
+        description: "",
+        thumbnail: "",
+        videoURL: ""
+    )
+    
     static var previews: some View {
-        LessonDetailsViewControllerView()
+        LessonDetailsViewControllerView(lesson: lesson)
     }
 }
 
