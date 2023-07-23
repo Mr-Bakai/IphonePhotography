@@ -27,7 +27,6 @@ struct LessonsListView: View {
                                 .fontWeight(.semibold)
                                 .lineLimit(2)
                                 .minimumScaleFactor(0.5)
-                            
                         }
                     }
                 }

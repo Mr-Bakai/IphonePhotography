@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-
 struct LessonDetailsViewControllerView: UIViewControllerRepresentable {
     
-    private var lesson: Lesson
+    private let lesson: Lesson
     
     init(lesson: Lesson) {
         self.lesson = lesson

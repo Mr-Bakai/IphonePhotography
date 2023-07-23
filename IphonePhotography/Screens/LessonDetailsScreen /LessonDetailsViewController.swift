@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import SnapKit
 import URLImage
+import AVKit
 
 class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
     private var lesson: Lesson
@@ -18,14 +19,37 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         return view
     }()
     
-    private let imageCover: UIImageView = {
+    private let playImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "play.fill")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
         return imageView
+    }()
+    
+    private var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "The Key To Success in iPhone Photography"
+        label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.numberOfLines = 0
+        return label
     }()
     
     init(lesson: Lesson) {
         self.lesson = lesson
         super.init(nibName: nil, bundle: nil)
+        self.configureUI()
+    }
+    
+    private func configureUI() {
+        self.titleLabel.text = lesson.name
+        self.descriptionLabel.text = lesson.description
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +70,51 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
             make.width.equalToSuperview()
             make.top.equalToSuperview()
         }
+        
+        thumbnail.addSubview(playImage)
+        playImage.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.width.equalTo(40)
+            make.height.equalTo(45)
+        }
+        
+        view.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(thumbnail.snp.bottom).offset(18)
+            make.left.right.equalToSuperview().inset(8)
+        }
+        
+        view.addSubview(descriptionLabel)
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(18)
+            make.left.right.equalToSuperview().inset(8)
+        }
+        
+        self.setupActions()
+    }
+    
+    private func setupActions() {
+        let playImageTap = UITapGestureRecognizer(target: self, action: #selector(playImageTapped))
+        playImage.addGestureRecognizer(playImageTap)
+        playImage.isUserInteractionEnabled = true
+    }
+    
+    private func playVideo() {
+        guard let url = lesson.videoURL,
+              let videoURL = URL(string: url) else { return }
+        
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        self.present(playerViewController, animated: true) {
+            playerViewController.player?.play()
+        }
+    }
+    
+    @objc private func playImageTapped() {
+        self.playVideo()
     }
 }
 
