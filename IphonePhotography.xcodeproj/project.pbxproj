@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13B91BF67DFB055825FF907B /* Pods_IphonePhotography_IphonePhotographyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850C8B20C265681BE375C7D7 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */; };
 		66285A72227F78595D6527DF /* Pods_IphonePhotography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A576792E9DD776B28AABF5 /* Pods_IphonePhotography.framework */; };
+		A96B1F292A6E2A5600514D5B /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B1F282A6E2A5600514D5B /* Download.swift */; };
 		A9AD81742A62DE2D00E845F4 /* LessonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */; };
 		A9AD81772A630E9700E845F4 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81762A630E9700E845F4 /* LessonsModel.swift */; };
 		A9AD817A2A630ECA00E845F4 /* LessonsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */; };
@@ -55,6 +56,7 @@
 		751A42C5B22F8E0E2AF3CF8D /* Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig"; path = "Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		850C8B20C265681BE375C7D7 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotography_IphonePhotographyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CB3B93DC1F05F7D252D727 /* Pods_IphonePhotographyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotographyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A96B1F282A6E2A5600514D5B /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListView.swift; sourceTree = "<group>"; };
 		A9AD81762A630E9700E845F4 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsEndpoint.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				A9C7985A2A49CECF0080CB73 /* App.swift */,
 				A9C7985E2A49CED10080CB73 /* Assets.xcassets */,
 				A9C798602A49CED10080CB73 /* Preview Content */,
+				A96B1F282A6E2A5600514D5B /* Download.swift */,
 			);
 			path = IphonePhotography;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				A9AD81802A63113E00E845F4 /* LessonsService.swift in Sources */,
 				A9BF0C8F2A64E341008F584C /* LessonDetailsViewControllerRepresentable.swift in Sources */,
 				A9AD81772A630E9700E845F4 /* LessonsModel.swift in Sources */,
+				A96B1F292A6E2A5600514D5B /* Download.swift in Sources */,
 				A9BF0C8D2A64DF75008F584C /* LessonDetailsViewController.swift in Sources */,
 				A9C7985D2A49CECF0080CB73 /* LessonsScreen.swift in Sources */,
 				A9AD81832A6316E300E845F4 /* ResultState.swift in Sources */,

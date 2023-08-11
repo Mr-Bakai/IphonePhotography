@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+// TODO: BAKAI, to be refactored
 struct LessonsListView: View {
+    
+    @EnvironmentObject var lessonViewModel: LessonsViewModelImpl
     
     private var lessons: [Lesson]
     
@@ -37,18 +40,23 @@ struct LessonsListView: View {
     }
     
     private func makeLessonDetailsVC(_ lesson: Lesson) -> some View {
-        LessonDetailsViewControllerView(lesson: lesson)
-            .navigationBarTitleDisplayMode(.inline)
-            .edgesIgnoringSafeArea(.bottom)
-            .toolbar { getToolbar() }
+        LessonDetailsViewControllerView(
+            lesson: lesson,
+            lessonViewModel: lessonViewModel
+        )
+        .navigationBarTitleDisplayMode(.inline)
+        .edgesIgnoringSafeArea(.bottom)
+        .toolbar {
+            getToolbar(lesson)
+        }
     }
     
-    func getToolbar() -> some ToolbarContent {
+    func getToolbar(_ lesson: Lesson) -> some ToolbarContent {
         Group {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // TODO: Start downloading
-                    let _ = print("download tapped")
+                    let _ = print("@@ lesson: \(lesson)")
+                    toggleDownload(for: lesson)
                 } label: {
                     HStack {
                         Image("cloud_download")
@@ -58,8 +66,51 @@ struct LessonsListView: View {
                             .foregroundColor(.blue)
                         
                         Text("Download")
+                        
+                        let _ = print("@@ Progress: \(progress)")
+                        
+                        if progress > 0 && progress < 1.0 {
+                            ProgressView(value: progress)
+                        }
                     }
                 }
+            }
+        }
+    }
+}
+
+private extension LessonsListView {
+    var progress: Double {
+        guard let lesson = lessonViewModel.lesson else { return 0.0 }
+        return lessonViewModel.lessonResponse?[lesson.id]?.progress ?? 0.0
+    }
+    
+    var buttonImageName: String {
+        switch (progress, lessonViewModel.lesson?.isDownloading ?? false) {
+        case (1.0, _): return "checkmark.circle.fill"
+        case (_, true): return "pause.fill"
+        default: return "tray.and.arrow.down"
+        }
+    }
+}
+
+private extension LessonsListView {
+    func toggleDownload(for lesson: Lesson) {
+        
+        lessonViewModel.lesson = lesson
+        let lesson = lessonViewModel.lessonResponse?[lesson.id]
+        guard let lesson else { return }
+        
+        let _ = print("@@ lesson: \(lesson.id)")
+        let _ = print("@@ lesson.isDownloading: \(lesson.isDownloading)")
+        
+        if lesson.isDownloading {
+            lessonViewModel.pauseDownload(for: lesson)
+        } else {
+            if lesson.progress > 0 {
+                lessonViewModel.resumeDownload(for: lesson)
+            } else {
+                Task { try? await lessonViewModel.download(lesson) }
             }
         }
     }

@@ -9,10 +9,13 @@ import SwiftUI
 
 struct LessonDetailsViewControllerView: UIViewControllerRepresentable {
     
+    private var lessonViewModel: LessonsViewModelImpl
     private let lesson: Lesson
     
-    init(lesson: Lesson) {
+    init(lesson: Lesson, lessonViewModel: LessonsViewModelImpl) {
         self.lesson = lesson
+        self.lessonViewModel = lessonViewModel
+        self.lessonViewModel.lesson = lesson
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
@@ -20,6 +23,6 @@ struct LessonDetailsViewControllerView: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> some UIViewController {
-        return LessonDetailsViewController(lesson: self.lesson)
+        return LessonDetailsViewController(lesson: lesson, lessonViewModel: lessonViewModel)
     }
 }

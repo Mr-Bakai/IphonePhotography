@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct LessonsScreen: View {
-    @ObservedObject var viewModel = LessonsViewModelImpl(service: LessonsServiceImpl())
+    @StateObject var lessonViewModel = LessonsViewModelImpl(service: LessonsServiceImpl())
     
     var body: some View {
         VStack {
             
-            switch viewModel.state {
+            switch lessonViewModel.state {
             case .loading:
                 ProgressView()
                 
             case .success(let lessons):
                 LessonsListView(lessons: lessons)
-                let _ = print("@@ Lessons: \(lessons)")
                 
-            case .failed(_):
+            case .failed(let message):
+                let _ = print("ErrorMessage: \(message)")
                 // TODO: Show Error BottomSheet
                 ProgressView()
             }
         }
-        .onAppear { viewModel.getLessons() }
+        .onAppear { lessonViewModel.getLessons() }
+        .environmentObject(lessonViewModel)
     }
 }
 

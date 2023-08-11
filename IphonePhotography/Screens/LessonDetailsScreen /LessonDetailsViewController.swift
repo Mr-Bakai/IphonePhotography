@@ -11,7 +11,10 @@ import SnapKit
 import URLImage
 import AVKit
 
+// TODO: Show a “Download” button to start download for offline viewing
 class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    private var lessonViewModel: LessonsViewModelImpl
     private var lesson: Lesson
     
     private let toolbar: UIToolbarView = {
@@ -41,8 +44,9 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         return label
     }()
     
-    init(lesson: Lesson) {
+    init(lesson: Lesson, lessonViewModel: LessonsViewModelImpl) {
         self.lesson = lesson
+        self.lessonViewModel = lessonViewModel
         super.init(nibName: nil, bundle: nil)
         self.configureUI()
     }
@@ -91,6 +95,16 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
             make.left.right.equalToSuperview().inset(8)
         }
         
+        let progressView = UIProgressView(progressViewStyle: .bar)
+        progressView.trackTintColor = UIColor.lightGray
+        progressView.tintColor = UIColor.blue
+        
+        view.addSubview(progressView)
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(18)
+            make.left.right.equalToSuperview().inset(8)
+        }
+        
         self.setupActions()
     }
     
@@ -118,6 +132,20 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
     }
 }
 
+private extension LessonDetailsViewController {
+    var progress: Double {
+        lesson.progress
+    }
+    
+    var buttonImageName: String {
+        switch (progress, lesson.isDownloading ) {
+        case (1.0, _): return "checkmark.circle.fill"
+        case (_, true): return "pause.fill"
+        default: return "tray.and.arrow.down"
+        }
+    }
+}
+
 struct LessonDetailsViewController_Previews: PreviewProvider {
     private static let lesson: Lesson = Lesson(
         id: 0,
@@ -126,9 +154,11 @@ struct LessonDetailsViewController_Previews: PreviewProvider {
         thumbnail: "",
         videoURL: ""
     )
-    
+
+    private static let lessonViewModel = LessonsViewModelImpl(service: LessonsServiceImpl())
+
     static var previews: some View {
-        LessonDetailsViewControllerView(lesson: lesson)
+        LessonDetailsViewControllerView(lesson: lesson, lessonViewModel: lessonViewModel)
     }
 }
 
@@ -141,7 +171,7 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         super.viewDidLoad()
         interactivePopGestureRecognizer?.delegate = self
     }
-
+    
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return viewControllers.count > 1
     }
