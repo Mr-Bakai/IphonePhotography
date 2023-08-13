@@ -58,17 +58,7 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     }
     
     @MainActor
-    func fetchPodcast() async throws {
-        let url = URL(string: "https://itunes.apple.com/lookup?id=1386867488&media=podcast&entity=podcastEpisode&limit=5")!
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        lessonResponse = try decoder.decode(LessonsResponse.self, from: data)
-    }
-    
-    @MainActor
     func download(_ lesson: Lesson) async throws {
-        print("@@ Download: \(lesson.id)")
         guard downloads[lesson.url] == nil else { return }
         let download = Download(url: lesson.url, downloadSession: downloadSession)
         downloads[lesson.url] = download
@@ -100,31 +90,26 @@ private extension LessonsViewModelImpl {
         case let .success(url):
             saveFile(for: lesson, at: url)
         }
-        
     }
     
     func saveFile(for lesson: Lesson, at url: URL) {
-        guard let directoryURL = lessonResponse?.directoryURL else { return }
         let filemanager = FileManager.default
-        if !filemanager.fileExists(atPath: directoryURL.path) {
-            try? filemanager.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-        }
         try? filemanager.moveItem(at: url, to: lesson.fileURL)
     }
 }
 
 extension LessonsResponse {
     var directoryURL: URL {
-       FileManager
+        FileManager
             .default
             .urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("lessons") // TODO: BAKAI, fix me
+            .appendingPathComponent("lessons")
     }
 }
 
 extension Lesson {
     var fileURL: URL {
-       FileManager
+        FileManager
             .default
             .urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("lessons")
@@ -132,6 +117,9 @@ extension Lesson {
             .appendingPathExtension(for: .mpeg4Movie)
     }
 }
+
+// WHERE TO GO FROM HERE
+// 1 -> After saving, looked at device container and it is not saved at Lesson folder, it might be saved at tmpl folder, to be cheked (on physical device)
 
 // TODO: BAKAI
 // 1 -> After saving it should not be downloading again

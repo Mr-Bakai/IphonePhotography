@@ -55,7 +55,13 @@ extension Download {
 }
 
 extension Download: URLSessionDownloadDelegate {
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+    func urlSession(
+        _ session: URLSession,
+        downloadTask: URLSessionDownloadTask,
+        didWriteData bytesWritten: Int64,
+        totalBytesWritten: Int64,
+        totalBytesExpectedToWrite: Int64
+    ) {
         continuation?.yield(
             .progress(
                 currentBytes: totalBytesWritten,
@@ -71,10 +77,39 @@ extension Download: URLSessionDownloadDelegate {
         didFinishDownloadingTo location: URL
     ) {
         print("@@ Location: \(location)")
-        continuation?.yield(.success(url: location))
         
+        let filemanager = FileManager.default
         
+        var directoryURL: URL {
+           FileManager
+                .default
+                .urls(for: .documentDirectory, in: .userDomainMask)[0]
+                .appendingPathComponent("lessons")
+        }
         
+        do {
+            let documentsURL = try
+            FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+            
+            let savedURL = documentsURL
+                .appendingPathComponent("lessons")
+                .appendingPathComponent(location.lastPathComponent)
+                .appendingPathExtension(for: .mpeg4Movie)
+            
+            if !filemanager.fileExists(atPath: directoryURL.path) {
+                try? filemanager.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+            }
+            
+            try FileManager.default.moveItem(at: location, to: savedURL)
+            continuation?.yield(.success(url: savedURL))
+        } catch {
+            // TODO: BAKAI, FIX ME, return appropriate Error case
+        }
         continuation?.finish()
     }
 }

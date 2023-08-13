@@ -234,6 +234,7 @@
 		A9C798592A49CECF0080CB73 /* IphonePhotography */ = {
 			isa = PBXGroup;
 			children = (
+				A9E193F02A8928AF0062EBEC /* Utils */,
 				A9AD81812A6316D800E845F4 /* States */,
 				A9AD817E2A63113200E845F4 /* Service */,
 				A9AD817B2A63103000E845F4 /* Error */,
@@ -243,7 +244,6 @@
 				A9C7985A2A49CECF0080CB73 /* App.swift */,
 				A9C7985E2A49CED10080CB73 /* Assets.xcassets */,
 				A9C798602A49CED10080CB73 /* Preview Content */,
-				A96B1F282A6E2A5600514D5B /* Download.swift */,
 			);
 			path = IphonePhotography;
 			sourceTree = "<group>";
@@ -271,6 +271,14 @@
 				A9C798772A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift */,
 			);
 			path = IphonePhotographyUITests;
+			sourceTree = "<group>";
+		};
+		A9E193F02A8928AF0062EBEC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A96B1F282A6E2A5600514D5B /* Download.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C468C3A1875EF0B1FE741546 /* Frameworks */ = {
