@@ -86,31 +86,31 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     
     func fetchFromStore() {
         do {
-            let items = try fileManager.contentsOfDirectory(
+            let lessons = try fileManager.contentsOfDirectory(
                 at: self.lessonsDirectory,
                 includingPropertiesForKeys: nil,
                 options: [.skipsHiddenFiles]
             )
             
-            for item in items {
-                matchData(itemUrl: item)
+            for lesson in lessons {
+                matchLesson(lesson)
             }
             
         } catch {}
     }
     
-    private func matchData(itemUrl: URL) {
+    private func matchLesson(_ lessonURL: URL) {
         DispatchQueue.global(qos: .background).async {
             do {
-                let documentsPath = try self.getItemURLFromLessonsDataDirectory(itemUrl)
+                let documentsPath = try self.lessonURLFromLessonsDataDirectory(lessonURL)
                 guard let file = try? FileHandle(forReadingFrom: documentsPath) else { return }
                 
-                let item = try JSONDecoder().decode(Lesson.self, from: file.availableData)
+                let lesson = try JSONDecoder().decode(Lesson.self, from: file.availableData)
                 
-                if item.id == Int(itemUrl.deletingPathExtension().lastPathComponent) {
-                    var copyItem = item
-                    copyItem.videoURL = itemUrl.absoluteString
-                    self.lessons.append(copyItem)
+                if lesson.id == Int(lessonURL.deletingPathExtension().lastPathComponent) {
+                    var mutableLesson = lesson
+                    mutableLesson.videoURL = lessonURL.absoluteString
+                    self.lessons.append(mutableLesson)
                 }
                 
                 DispatchQueue.main.async {
@@ -138,7 +138,7 @@ private extension LessonsViewModelImpl {
             
             do {
                 let data = try JSONEncoder().encode(lesson)
-                let outfile = try self.getItemURLToSaveIntoLessonsDataDirectory(lesson)
+                let outfile = try self.lessonURLToSaveIntoLessonsDataDirectory(lesson)
                 
                 if !self.fileManager.fileExists(atPath: self.lessonsDataDirectory.path) {
                     try? self.fileManager.createDirectory(at: self.lessonsDataDirectory, withIntermediateDirectories: true)
@@ -147,15 +147,6 @@ private extension LessonsViewModelImpl {
                 
             } catch {}
         }
-    }
-}
-
-extension LessonsResponse {
-    var directoryURL: URL {
-        FileManager
-            .default
-            .urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("lessons")
     }
 }
 
@@ -189,7 +180,7 @@ extension LessonsViewModelImpl {
 }
 
 extension LessonsViewModelImpl {
-    func getItemURLFromLessonsDataDirectory(_ itemUrl: URL) throws -> URL {
+    func lessonURLFromLessonsDataDirectory(_ lessonURL: URL) throws -> URL {
         return try FileManager.default.url(
             for: .documentDirectory,
             in: .userDomainMask,
@@ -197,12 +188,12 @@ extension LessonsViewModelImpl {
             create: false
         )
             .appendingPathComponent("lessonsData")
-            .appendingPathComponent(itemUrl.deletingPathExtension().lastPathComponent)
+            .appendingPathComponent(lessonURL.deletingPathExtension().lastPathComponent)
     }
 }
 
 extension LessonsViewModelImpl {
-    func getItemURLToSaveIntoLessonsDataDirectory(_ lesson: Lesson) throws -> URL {
+    func lessonURLToSaveIntoLessonsDataDirectory(_ lesson: Lesson) throws -> URL {
         return try FileManager.default.url(
             for: .documentDirectory,
             in: .userDomainMask,
