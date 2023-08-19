@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 protocol LessonsViewModel {
     func getLessons()
@@ -30,6 +31,7 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     }()
     
     @Published private(set) var state: ResultState = .loading
+    @Published var isSheetPresented: Bool = true
     
     init(service: LessonsService) {
         self.service = service
@@ -48,6 +50,7 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
                     
                 case .failure(let error):
                     self.state = .failed(error: error)
+                    self.isSheetPresented = true
                 }
                 
             } receiveValue: { response in
@@ -117,9 +120,6 @@ extension Lesson {
             .appendingPathExtension(for: .mpeg4Movie)
     }
 }
-
-// WHERE TO GO FROM HERE
-// 1 -> After saving, looked at device container and it is not saved at Lesson folder, it might be saved at tmpl folder, to be cheked (on physical device)
 
 // TODO: BAKAI
 // 1 -> After saving it should not be downloading again

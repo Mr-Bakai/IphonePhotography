@@ -22,12 +22,17 @@ struct LessonsScreen: View {
                 
             case .failed(let message):
                 let _ = print("ErrorMessage: \(message)")
-                // TODO: Show Error BottomSheet
-                ProgressView()
             }
         }
         .onAppear { lessonViewModel.getLessons() }
         .environmentObject(lessonViewModel)
+        .sheet(isPresented: $lessonViewModel.isSheetPresented) {
+            RedBottomSheet(
+                description: "Error",
+                primaryTitle: "Try Again",
+                onPrimaryTap: {}
+            )
+        }
     }
 }
 

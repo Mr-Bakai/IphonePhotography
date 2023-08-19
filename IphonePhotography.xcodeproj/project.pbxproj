@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		13B91BF67DFB055825FF907B /* Pods_IphonePhotography_IphonePhotographyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850C8B20C265681BE375C7D7 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */; };
 		66285A72227F78595D6527DF /* Pods_IphonePhotography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A576792E9DD776B28AABF5 /* Pods_IphonePhotography.framework */; };
+		A9074A5B2A90B25D0068749E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9074A5A2A90B25D0068749E /* BottomSheet.swift */; };
+		A9074A5D2A90B2B10068749E /* CustomBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9074A5C2A90B2B10068749E /* CustomBottomSheet.swift */; };
+		A9074A5F2A90B3030068749E /* DisableSwipeBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9074A5E2A90B3030068749E /* DisableSwipeBackView.swift */; };
+		A9074A612A90B35B0068749E /* AppSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9074A602A90B35B0068749E /* AppSizes.swift */; };
+		A9074A632A90B4650068749E /* AppPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9074A622A90B4650068749E /* AppPadding.swift */; };
+		A9074A652A90B5730068749E /* CornerRadius+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9074A642A90B5730068749E /* CornerRadius+Extension.swift */; };
 		A96B1F292A6E2A5600514D5B /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B1F282A6E2A5600514D5B /* Download.swift */; };
 		A9AD81742A62DE2D00E845F4 /* LessonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */; };
 		A9AD81772A630E9700E845F4 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81762A630E9700E845F4 /* LessonsModel.swift */; };
@@ -28,6 +34,11 @@
 		A9C7986C2A49CED10080CB73 /* IphonePhotographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7986B2A49CED10080CB73 /* IphonePhotographyTests.swift */; };
 		A9C798762A49CED10080CB73 /* IphonePhotographyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C798752A49CED10080CB73 /* IphonePhotographyUITests.swift */; };
 		A9C798782A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C798772A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift */; };
+		A9E193F22A892F640062EBEC /* RedBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E193F12A892F640062EBEC /* RedBottomSheet.swift */; };
+		A9E193F42A8931490062EBEC /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E193F32A8931480062EBEC /* PrimaryButton.swift */; };
+		A9E193F62A8931B00062EBEC /* PrimaryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E193F52A8931B00062EBEC /* PrimaryColor.swift */; };
+		A9E193F82A8931E10062EBEC /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E193F72A8931E10062EBEC /* FontSize.swift */; };
+		A9E193FA2A89336A0062EBEC /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E193F92A89336A0062EBEC /* CornerRadius.swift */; };
 		F36C1C348532BE817FDAA95B /* Pods_IphonePhotographyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CB3B93DC1F05F7D252D727 /* Pods_IphonePhotographyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +67,12 @@
 		751A42C5B22F8E0E2AF3CF8D /* Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig"; path = "Target Support Files/Pods-IphonePhotography-IphonePhotographyUITests/Pods-IphonePhotography-IphonePhotographyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		850C8B20C265681BE375C7D7 /* Pods_IphonePhotography_IphonePhotographyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotography_IphonePhotographyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CB3B93DC1F05F7D252D727 /* Pods_IphonePhotographyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IphonePhotographyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9074A5A2A90B25D0068749E /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		A9074A5C2A90B2B10068749E /* CustomBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheet.swift; sourceTree = "<group>"; };
+		A9074A5E2A90B3030068749E /* DisableSwipeBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableSwipeBackView.swift; sourceTree = "<group>"; };
+		A9074A602A90B35B0068749E /* AppSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSizes.swift; sourceTree = "<group>"; };
+		A9074A622A90B4650068749E /* AppPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPadding.swift; sourceTree = "<group>"; };
+		A9074A642A90B5730068749E /* CornerRadius+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Extension.swift"; sourceTree = "<group>"; };
 		A96B1F282A6E2A5600514D5B /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		A9AD81732A62DE2D00E845F4 /* LessonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListView.swift; sourceTree = "<group>"; };
 		A9AD81762A630E9700E845F4 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
@@ -78,6 +95,11 @@
 		A9C798712A49CED10080CB73 /* IphonePhotographyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IphonePhotographyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C798752A49CED10080CB73 /* IphonePhotographyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphonePhotographyUITests.swift; sourceTree = "<group>"; };
 		A9C798772A49CED10080CB73 /* IphonePhotographyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphonePhotographyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9E193F12A892F640062EBEC /* RedBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBottomSheet.swift; sourceTree = "<group>"; };
+		A9E193F32A8931480062EBEC /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A9E193F52A8931B00062EBEC /* PrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryColor.swift; sourceTree = "<group>"; };
+		A9E193F72A8931E10062EBEC /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		A9E193F92A89336A0062EBEC /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		A9EDAE8E19F595F8FD52E658 /* Pods-IphonePhotography.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography.debug.xcconfig"; path = "Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography.debug.xcconfig"; sourceTree = "<group>"; };
 		C93033EDE32564E7C52A598B /* Pods-IphonePhotography.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IphonePhotography.release.xcconfig"; path = "Target Support Files/Pods-IphonePhotography/Pods-IphonePhotography.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +199,11 @@
 			isa = PBXGroup;
 			children = (
 				A9B390F32A66381600DA8B23 /* Toolbar.swift */,
+				A9E193F12A892F640062EBEC /* RedBottomSheet.swift */,
+				A9E193F32A8931480062EBEC /* PrimaryButton.swift */,
+				A9074A5A2A90B25D0068749E /* BottomSheet.swift */,
+				A9074A5C2A90B2B10068749E /* CustomBottomSheet.swift */,
+				A9074A5E2A90B3030068749E /* DisableSwipeBackView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -277,6 +304,12 @@
 			isa = PBXGroup;
 			children = (
 				A96B1F282A6E2A5600514D5B /* Download.swift */,
+				A9E193F52A8931B00062EBEC /* PrimaryColor.swift */,
+				A9E193F72A8931E10062EBEC /* FontSize.swift */,
+				A9E193F92A89336A0062EBEC /* CornerRadius.swift */,
+				A9074A602A90B35B0068749E /* AppSizes.swift */,
+				A9074A622A90B4650068749E /* AppPadding.swift */,
+				A9074A642A90B5730068749E /* CornerRadius+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -530,19 +563,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AD81742A62DE2D00E845F4 /* LessonsListView.swift in Sources */,
+				A9E193F82A8931E10062EBEC /* FontSize.swift in Sources */,
+				A9E193F22A892F640062EBEC /* RedBottomSheet.swift in Sources */,
 				A9B390F42A66381600DA8B23 /* Toolbar.swift in Sources */,
 				A9AD81802A63113E00E845F4 /* LessonsService.swift in Sources */,
 				A9BF0C8F2A64E341008F584C /* LessonDetailsViewControllerRepresentable.swift in Sources */,
+				A9074A5B2A90B25D0068749E /* BottomSheet.swift in Sources */,
+				A9074A5F2A90B3030068749E /* DisableSwipeBackView.swift in Sources */,
 				A9AD81772A630E9700E845F4 /* LessonsModel.swift in Sources */,
 				A96B1F292A6E2A5600514D5B /* Download.swift in Sources */,
 				A9BF0C8D2A64DF75008F584C /* LessonDetailsViewController.swift in Sources */,
+				A9074A632A90B4650068749E /* AppPadding.swift in Sources */,
 				A9C7985D2A49CECF0080CB73 /* LessonsScreen.swift in Sources */,
 				A9AD81832A6316E300E845F4 /* ResultState.swift in Sources */,
+				A9074A612A90B35B0068749E /* AppSizes.swift in Sources */,
 				A9AD817A2A630ECA00E845F4 /* LessonsEndpoint.swift in Sources */,
+				A9074A5D2A90B2B10068749E /* CustomBottomSheet.swift in Sources */,
 				A9C7985B2A49CECF0080CB73 /* App.swift in Sources */,
 				A9BF0C8A2A63F380008F584C /* ImagePlaceholder.swift in Sources */,
 				A9AD81862A63173100E845F4 /* LessonsViewModel.swift in Sources */,
+				A9074A652A90B5730068749E /* CornerRadius+Extension.swift in Sources */,
+				A9E193F42A8931490062EBEC /* PrimaryButton.swift in Sources */,
+				A9E193F62A8931B00062EBEC /* PrimaryColor.swift in Sources */,
 				A9AD817D2A63103B00E845F4 /* APIError.swift in Sources */,
+				A9E193FA2A89336A0062EBEC /* CornerRadius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
