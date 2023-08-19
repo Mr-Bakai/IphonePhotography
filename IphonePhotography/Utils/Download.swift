@@ -113,3 +113,5 @@ extension Download: URLSessionDownloadDelegate {
         continuation?.finish()
     }
 }
+
+// TODO: BAKAI, Refactored

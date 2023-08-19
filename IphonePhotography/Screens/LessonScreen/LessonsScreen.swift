@@ -12,7 +12,6 @@ struct LessonsScreen: View {
     
     var body: some View {
         VStack {
-            
             switch lessonViewModel.state {
             case .loading:
                 ProgressView()
@@ -24,7 +23,10 @@ struct LessonsScreen: View {
                 EmptyView()
             }
         }
-        .onAppear { lessonViewModel.getLessons() }
+        .onAppear {
+//            lessonViewModel.getLessons()
+            lessonViewModel.fetchFromStore()
+        }
         .environmentObject(lessonViewModel)
         .bottomSheet(isPresented: $lessonViewModel.isSheetPresented) {
             RedBottomSheet(

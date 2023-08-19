@@ -16,13 +16,13 @@ protocol LessonsViewModel {
 final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     
     private let service: LessonsService
+    private let fileManager = FileManager.default
     
     var lesson: Lesson?
-    
     private(set) var lessons = [Lesson]()
-    private var cancellables = Set<AnyCancellable>()
-    
     @Published var lessonResponse: LessonsResponse?
+    
+    private var cancellables = Set<AnyCancellable>()
     private var downloads: [URL: Download] = [:]
     
     private lazy var downloadSession: URLSession = {
@@ -31,7 +31,7 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     }()
     
     @Published private(set) var state: ResultState = .loading
-    @Published var isSheetPresented: Bool = true
+    @Published var isSheetPresented: Bool = false
     @Published var errorMessage = ""
     
     init(service: LessonsService) {
@@ -75,15 +75,50 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     }
     
     func pauseDownload(for lesson: Lesson) {
-        print("@@ Pause Download: \(lesson.id)")
         downloads[lesson.url]?.pause()
         lessonResponse?[lesson.id]?.isDownloading = false
     }
     
     func resumeDownload(for lesson: Lesson) {
-        print("@@ Resume Download: \(lesson.id)")
         downloads[lesson.url]?.resume()
         lessonResponse?[lesson.id]?.isDownloading = true
+    }
+    
+    func fetchFromStore() {
+        do {
+            let items = try fileManager.contentsOfDirectory(
+                at: self.lessonsDirectory,
+                includingPropertiesForKeys: nil,
+                options: [.skipsHiddenFiles]
+            )
+            
+            for item in items {
+                matchData(itemUrl: item)
+            }
+            
+        } catch {}
+    }
+    
+    private func matchData(itemUrl: URL) {
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let documentsPath = try self.getItemURLFromLessonsDataDirectory(itemUrl)
+                guard let file = try? FileHandle(forReadingFrom: documentsPath) else { return }
+                
+                let item = try JSONDecoder().decode(Lesson.self, from: file.availableData)
+                
+                if item.id == Int(itemUrl.deletingPathExtension().lastPathComponent) {
+                    var copyItem = item
+                    copyItem.videoURL = itemUrl.absoluteString
+                    self.lessons.append(copyItem)
+                }
+                
+                DispatchQueue.main.async {
+                    self.state = .success(content: self.lessons)
+                }
+                
+            } catch {}
+        }
     }
 }
 
@@ -98,8 +133,20 @@ private extension LessonsViewModelImpl {
     }
     
     func saveFile(for lesson: Lesson, at url: URL) {
-        let filemanager = FileManager.default
-        try? filemanager.moveItem(at: url, to: lesson.fileURL)
+        DispatchQueue.global(qos: .background).async {
+            try? self.fileManager.moveItem(at: url, to: lesson.fileURL)
+            
+            do {
+                let data = try JSONEncoder().encode(lesson)
+                let outfile = try self.getItemURLToSaveIntoLessonsDataDirectory(lesson)
+                
+                if !self.fileManager.fileExists(atPath: self.lessonsDataDirectory.path) {
+                    try? self.fileManager.createDirectory(at: self.lessonsDataDirectory, withIntermediateDirectories: true)
+                }
+                try data.write(to: outfile)
+                
+            } catch {}
+        }
     }
 }
 
@@ -123,5 +170,53 @@ extension Lesson {
     }
 }
 
+extension LessonsViewModelImpl {
+    var lessonsDirectory: URL{
+        FileManager
+            .default
+            .urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("lessons")
+    }
+}
+
+extension LessonsViewModelImpl {
+    var lessonsDataDirectory: URL {
+       FileManager
+            .default
+            .urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("lessonsData")
+    }
+}
+
+extension LessonsViewModelImpl {
+    func getItemURLFromLessonsDataDirectory(_ itemUrl: URL) throws -> URL {
+        return try FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: false
+        )
+            .appendingPathComponent("lessonsData")
+            .appendingPathComponent(itemUrl.deletingPathExtension().lastPathComponent)
+    }
+}
+
+extension LessonsViewModelImpl {
+    func getItemURLToSaveIntoLessonsDataDirectory(_ lesson: Lesson) throws -> URL {
+        return try FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: false
+        )
+            .appendingPathComponent("lessonsData")
+            .appendingPathComponent("\(lesson.id)")
+    }
+}
+
+
+
 // TODO: BAKAI
 // 1 -> After saving it should not be downloading again
+// 2 -> This viewModel to be Refactored
+// Continue on: Refactor the item matching thingy, it is worked well body!!!!

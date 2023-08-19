@@ -26,7 +26,7 @@ struct LessonsListView: View {
                         HStack {
                             ImagePlaceholder(lesson: item)
                                 .cornerRadius(6)
-                            Text(item.name ?? "")
+                            Text(item.name ?? "None")
                                 .fontWeight(.semibold)
                                 .lineLimit(2)
                                 .minimumScaleFactor(0.5)

@@ -27,7 +27,7 @@ struct Lesson: Codable {
     let id: Int
     let name, description: String?
     let thumbnail: String?
-    let videoURL: String?
+    var videoURL: String?
     var url: URL {
         guard
             let videoURL,

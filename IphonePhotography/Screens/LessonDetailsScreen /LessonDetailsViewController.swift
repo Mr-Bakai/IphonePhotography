@@ -73,6 +73,8 @@ class LessonDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         thumbnail.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.top.equalToSuperview()
+            make.width.equalToSuperview() // TODO: BAKAI, switch this
+            make.height.equalTo(200)      // TODO: BAKAI, switch this
         }
         
         thumbnail.addSubview(playImage)
