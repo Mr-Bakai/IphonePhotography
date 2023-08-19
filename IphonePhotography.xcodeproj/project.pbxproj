@@ -291,8 +291,8 @@
 		A9C798592A49CECF0080CB73 /* IphonePhotography */ = {
 			isa = PBXGroup;
 			children = (
-				A9074A682A91278E0068749E /* Presentation */,
 				A9074A662A91274F0068749E /* Data */,
+				A9074A682A91278E0068749E /* Presentation */,
 				A9C7985A2A49CECF0080CB73 /* App.swift */,
 				A9C7985E2A49CED10080CB73 /* Assets.xcassets */,
 				A9C798602A49CED10080CB73 /* Preview Content */,

@@ -15,7 +15,7 @@ protocol LessonsViewModel {
 
 final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     
-    private let service: LessonsService
+    private let service: LessonsApi
     private let fileManager = FileManager.default
     
     var lesson: Lesson?
@@ -34,7 +34,7 @@ final class LessonsViewModelImpl: ObservableObject, LessonsViewModel {
     @Published var isSheetPresented: Bool = false
     @Published var errorMessage = ""
     
-    init(service: LessonsService) {
+    init(service: LessonsApi) {
         self.service = service
     }
     
@@ -210,4 +210,3 @@ extension LessonsViewModelImpl {
 // TODO: BAKAI
 // 1 -> After saving it should not be downloading again
 // 2 -> This viewModel to be Refactored
-// Continue on: Refactor the item matching thingy, it is worked well body!!!!
