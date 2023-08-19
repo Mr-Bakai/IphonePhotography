@@ -20,17 +20,17 @@ struct LessonsScreen: View {
             case .success(let lessons):
                 LessonsListView(lessons: lessons)
                 
-            case .failed(let message):
-                let _ = print("ErrorMessage: \(message)")
+            case .failed:
+                EmptyView()
             }
         }
         .onAppear { lessonViewModel.getLessons() }
         .environmentObject(lessonViewModel)
-        .sheet(isPresented: $lessonViewModel.isSheetPresented) {
+        .bottomSheet(isPresented: $lessonViewModel.isSheetPresented) {
             RedBottomSheet(
-                description: "Error",
+                description: lessonViewModel.errorMessage,
                 primaryTitle: "Try Again",
-                onPrimaryTap: {}
+                onPrimaryTap: { lessonViewModel.getLessons() }
             )
         }
     }
