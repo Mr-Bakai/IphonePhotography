@@ -8,12 +8,11 @@
 import Foundation
 import Combine
 
-protocol LessonsService {
+protocol LessonsApi {
     func request(from endpoint: LessonsAPI) -> AnyPublisher<LessonsResponse, APIError>
 }
 
-
-struct LessonsServiceImpl: LessonsService {
+struct LessonsServiceImpl: LessonsApi {
     
     func request(from endpoint: LessonsAPI) -> AnyPublisher<LessonsResponse, APIError> {
         return URLSession

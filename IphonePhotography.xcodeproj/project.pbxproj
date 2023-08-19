@@ -20,7 +20,7 @@
 		A9AD81772A630E9700E845F4 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81762A630E9700E845F4 /* LessonsModel.swift */; };
 		A9AD817A2A630ECA00E845F4 /* LessonsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */; };
 		A9AD817D2A63103B00E845F4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD817C2A63103B00E845F4 /* APIError.swift */; };
-		A9AD81802A63113E00E845F4 /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD817F2A63113E00E845F4 /* LessonsService.swift */; };
+		A9AD81802A63113E00E845F4 /* LessonsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD817F2A63113E00E845F4 /* LessonsApi.swift */; };
 		A9AD81832A6316E300E845F4 /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81822A6316E300E845F4 /* ResultState.swift */; };
 		A9AD81862A63173100E845F4 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AD81852A63173100E845F4 /* LessonsViewModel.swift */; };
 		A9B390F42A66381600DA8B23 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B390F32A66381600DA8B23 /* Toolbar.swift */; };
@@ -78,7 +78,7 @@
 		A9AD81762A630E9700E845F4 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsEndpoint.swift; sourceTree = "<group>"; };
 		A9AD817C2A63103B00E845F4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		A9AD817F2A63113E00E845F4 /* LessonsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
+		A9AD817F2A63113E00E845F4 /* LessonsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsApi.swift; sourceTree = "<group>"; };
 		A9AD81822A6316E300E845F4 /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
 		A9AD81852A63173100E845F4 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
 		A9B390F32A66381600DA8B23 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
@@ -145,6 +145,62 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A9074A662A91274F0068749E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A9074A692A91281F0068749E /* Utils */,
+				A9AD81752A630E7900E845F4 /* Models */,
+				A9074A672A9127600068749E /* Api */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A9074A672A9127600068749E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A9AD817C2A63103B00E845F4 /* APIError.swift */,
+				A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */,
+				A9AD817F2A63113E00E845F4 /* LessonsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		A9074A682A91278E0068749E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A9E193F02A8928AF0062EBEC /* Utils */,
+				A9AD81812A6316D800E845F4 /* States */,
+				A9AD81722A62DD6400E845F4 /* Screens */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A9074A692A91281F0068749E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A96B1F282A6E2A5600514D5B /* Download.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A9074A6A2A9128750068749E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A9074A5E2A90B3030068749E /* DisableSwipeBackView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A9074A6B2A9128820068749E /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A9E193F12A892F640062EBEC /* RedBottomSheet.swift */,
+				A9074A5A2A90B25D0068749E /* BottomSheet.swift */,
+				A9074A5C2A90B2B10068749E /* CustomBottomSheet.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		A9AD81722A62DD6400E845F4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,30 +219,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A9AD81782A630EB900E845F4 /* EndPoint */ = {
-			isa = PBXGroup;
-			children = (
-				A9AD81792A630ECA00E845F4 /* LessonsEndpoint.swift */,
-			);
-			path = EndPoint;
-			sourceTree = "<group>";
-		};
-		A9AD817B2A63103000E845F4 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				A9AD817C2A63103B00E845F4 /* APIError.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
-		A9AD817E2A63113200E845F4 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				A9AD817F2A63113E00E845F4 /* LessonsService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		A9AD81812A6316D800E845F4 /* States */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,12 +230,10 @@
 		A9B390F22A66380200DA8B23 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				A9074A6B2A9128820068749E /* BottomSheet */,
+				A9074A6A2A9128750068749E /* Utils */,
 				A9B390F32A66381600DA8B23 /* Toolbar.swift */,
-				A9E193F12A892F640062EBEC /* RedBottomSheet.swift */,
 				A9E193F32A8931480062EBEC /* PrimaryButton.swift */,
-				A9074A5A2A90B25D0068749E /* BottomSheet.swift */,
-				A9074A5C2A90B2B10068749E /* CustomBottomSheet.swift */,
-				A9074A5E2A90B3030068749E /* DisableSwipeBackView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -261,13 +291,8 @@
 		A9C798592A49CECF0080CB73 /* IphonePhotography */ = {
 			isa = PBXGroup;
 			children = (
-				A9E193F02A8928AF0062EBEC /* Utils */,
-				A9AD81812A6316D800E845F4 /* States */,
-				A9AD817E2A63113200E845F4 /* Service */,
-				A9AD817B2A63103000E845F4 /* Error */,
-				A9AD81782A630EB900E845F4 /* EndPoint */,
-				A9AD81752A630E7900E845F4 /* Models */,
-				A9AD81722A62DD6400E845F4 /* Screens */,
+				A9074A682A91278E0068749E /* Presentation */,
+				A9074A662A91274F0068749E /* Data */,
 				A9C7985A2A49CECF0080CB73 /* App.swift */,
 				A9C7985E2A49CED10080CB73 /* Assets.xcassets */,
 				A9C798602A49CED10080CB73 /* Preview Content */,
@@ -303,7 +328,6 @@
 		A9E193F02A8928AF0062EBEC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A96B1F282A6E2A5600514D5B /* Download.swift */,
 				A9E193F52A8931B00062EBEC /* PrimaryColor.swift */,
 				A9E193F72A8931E10062EBEC /* FontSize.swift */,
 				A9E193F92A89336A0062EBEC /* CornerRadius.swift */,
@@ -566,7 +590,7 @@
 				A9E193F82A8931E10062EBEC /* FontSize.swift in Sources */,
 				A9E193F22A892F640062EBEC /* RedBottomSheet.swift in Sources */,
 				A9B390F42A66381600DA8B23 /* Toolbar.swift in Sources */,
-				A9AD81802A63113E00E845F4 /* LessonsService.swift in Sources */,
+				A9AD81802A63113E00E845F4 /* LessonsApi.swift in Sources */,
 				A9BF0C8F2A64E341008F584C /* LessonDetailsViewControllerRepresentable.swift in Sources */,
 				A9074A5B2A90B25D0068749E /* BottomSheet.swift in Sources */,
 				A9074A5F2A90B3030068749E /* DisableSwipeBackView.swift in Sources */,
